@@ -1,0 +1,18 @@
+ [
+  {
+  "id": 0,
+  "name": "Peas",
+  "image": "peas",
+  "price": "0.95f",
+  "units": "bag"
+  },
+  {
+  "id": 1,
+  "name": "Eggs",
+  "image": "peas",
+  "price": "2.10f",
+  "units": "dozen"
+  }
+]
+
+  

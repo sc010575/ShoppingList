@@ -10,12 +10,23 @@
 		4E1DCA3696B321A406D0D912 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AAA538CFAABD8D42C8110D /* libPods.a */; };
 		C5F3F3361C9C05A600B10007 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3351C9C05A600B10007 /* main.m */; };
 		C5F3F3391C9C05A600B10007 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3381C9C05A600B10007 /* AppDelegate.m */; };
-		C5F3F33C1C9C05A600B10007 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F33B1C9C05A600B10007 /* ViewController.m */; };
 		C5F3F33F1C9C05A600B10007 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F3F33D1C9C05A600B10007 /* Main.storyboard */; };
 		C5F3F3411C9C05A600B10007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5F3F3401C9C05A600B10007 /* Assets.xcassets */; };
 		C5F3F3441C9C05A600B10007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F3F3421C9C05A600B10007 /* LaunchScreen.storyboard */; };
 		C5F3F34F1C9C05A600B10007 /* ShoppingListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F34E1C9C05A600B10007 /* ShoppingListTests.m */; };
 		C5F3F35A1C9C05A600B10007 /* ShoppingListUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3591C9C05A600B10007 /* ShoppingListUITests.m */; };
+		C5F3F36A1C9C11CF00B10007 /* SCShoppingListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3691C9C11CF00B10007 /* SCShoppingListTableViewController.m */; };
+		C5F3F36E1C9C235F00B10007 /* SCShoppingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F36D1C9C235F00B10007 /* SCShoppingItem.m */; };
+		C5F3F3721C9C30E300B10007 /* SCShoppingListCellTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3711C9C30E300B10007 /* SCShoppingListCellTableViewCell.m */; };
+		C5F3F3751C9C33AC00B10007 /* ShoppingList.json in Resources */ = {isa = PBXBuildFile; fileRef = C5F3F3741C9C33AC00B10007 /* ShoppingList.json */; };
+		C5F3F3771C9C362C00B10007 /* SCShoppingListUnitTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3761C9C362C00B10007 /* SCShoppingListUnitTestCase.m */; };
+		C5F3F37A1C9C42DA00B10007 /* SCShoppingListTableViewControllerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3791C9C42DA00B10007 /* SCShoppingListTableViewControllerTestCase.m */; };
+		C5F3F37D1C9C5C1500B10007 /* SCCheckoutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F37C1C9C5C1500B10007 /* SCCheckoutTableViewController.m */; };
+		C5F3F37F1C9C5C4700B10007 /* SCCheckoutTableViewControllerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F37E1C9C5C4700B10007 /* SCCheckoutTableViewControllerTestCase.m */; };
+		C5F3F3821C9C5ED300B10007 /* SCCheckoutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3811C9C5ED300B10007 /* SCCheckoutTableViewCell.m */; };
+		C5F3F3851C9C7CDB00B10007 /* SCCurrencyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3841C9C7CDB00B10007 /* SCCurrencyTableViewController.m */; };
+		C5F3F3891C9C83CC00B10007 /* SCCurrencyProviderService.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3881C9C83CC00B10007 /* SCCurrencyProviderService.m */; };
+		C5F3F38B1C9C83E500B10007 /* SCCurrencyProviderServiceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F38A1C9C83E500B10007 /* SCCurrencyProviderServiceTestCase.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,8 +54,6 @@
 		C5F3F3351C9C05A600B10007 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5F3F3371C9C05A600B10007 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		C5F3F3381C9C05A600B10007 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		C5F3F33A1C9C05A600B10007 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		C5F3F33B1C9C05A600B10007 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C5F3F33E1C9C05A600B10007 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C5F3F3401C9C05A600B10007 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C5F3F3431C9C05A600B10007 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -55,6 +64,25 @@
 		C5F3F3551C9C05A600B10007 /* ShoppingListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F3F3591C9C05A600B10007 /* ShoppingListUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoppingListUITests.m; sourceTree = "<group>"; };
 		C5F3F35B1C9C05A600B10007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5F3F3681C9C11CF00B10007 /* SCShoppingListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCShoppingListTableViewController.h; sourceTree = "<group>"; };
+		C5F3F3691C9C11CF00B10007 /* SCShoppingListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCShoppingListTableViewController.m; sourceTree = "<group>"; };
+		C5F3F36C1C9C235F00B10007 /* SCShoppingItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCShoppingItem.h; sourceTree = "<group>"; };
+		C5F3F36D1C9C235F00B10007 /* SCShoppingItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCShoppingItem.m; sourceTree = "<group>"; };
+		C5F3F3701C9C30E300B10007 /* SCShoppingListCellTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCShoppingListCellTableViewCell.h; sourceTree = "<group>"; };
+		C5F3F3711C9C30E300B10007 /* SCShoppingListCellTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCShoppingListCellTableViewCell.m; sourceTree = "<group>"; };
+		C5F3F3741C9C33AC00B10007 /* ShoppingList.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ShoppingList.json; sourceTree = SOURCE_ROOT; };
+		C5F3F3761C9C362C00B10007 /* SCShoppingListUnitTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCShoppingListUnitTestCase.m; sourceTree = "<group>"; };
+		C5F3F3791C9C42DA00B10007 /* SCShoppingListTableViewControllerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCShoppingListTableViewControllerTestCase.m; sourceTree = "<group>"; };
+		C5F3F37B1C9C5C1500B10007 /* SCCheckoutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCheckoutTableViewController.h; sourceTree = "<group>"; };
+		C5F3F37C1C9C5C1500B10007 /* SCCheckoutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCheckoutTableViewController.m; sourceTree = "<group>"; };
+		C5F3F37E1C9C5C4700B10007 /* SCCheckoutTableViewControllerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCheckoutTableViewControllerTestCase.m; sourceTree = "<group>"; };
+		C5F3F3801C9C5ED300B10007 /* SCCheckoutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCheckoutTableViewCell.h; sourceTree = "<group>"; };
+		C5F3F3811C9C5ED300B10007 /* SCCheckoutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCheckoutTableViewCell.m; sourceTree = "<group>"; };
+		C5F3F3831C9C7CDB00B10007 /* SCCurrencyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCurrencyTableViewController.h; sourceTree = "<group>"; };
+		C5F3F3841C9C7CDB00B10007 /* SCCurrencyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCurrencyTableViewController.m; sourceTree = "<group>"; };
+		C5F3F3871C9C83CC00B10007 /* SCCurrencyProviderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCurrencyProviderService.h; sourceTree = "<group>"; };
+		C5F3F3881C9C83CC00B10007 /* SCCurrencyProviderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCurrencyProviderService.m; sourceTree = "<group>"; };
+		C5F3F38A1C9C83E500B10007 /* SCCurrencyProviderServiceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCurrencyProviderServiceTestCase.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,12 +146,12 @@
 			children = (
 				C5F3F3371C9C05A600B10007 /* AppDelegate.h */,
 				C5F3F3381C9C05A600B10007 /* AppDelegate.m */,
-				C5F3F33A1C9C05A600B10007 /* ViewController.h */,
-				C5F3F33B1C9C05A600B10007 /* ViewController.m */,
-				C5F3F33D1C9C05A600B10007 /* Main.storyboard */,
-				C5F3F3401C9C05A600B10007 /* Assets.xcassets */,
-				C5F3F3421C9C05A600B10007 /* LaunchScreen.storyboard */,
-				C5F3F3451C9C05A600B10007 /* Info.plist */,
+				C5F3F3781C9C367700B10007 /* StoryBoards */,
+				C5F3F3731C9C339500B10007 /* Resources */,
+				C5F3F36F1C9C30AF00B10007 /* TableViewCell */,
+				C5F3F36B1C9C231D00B10007 /* DataModel */,
+				C5F3F3861C9C838900B10007 /* Service */,
+				C5F3F3671C9C112900B10007 /* ViewControllers */,
 				C5F3F3341C9C05A600B10007 /* Supporting Files */,
 			);
 			path = ShoppingList;
@@ -132,6 +160,7 @@
 		C5F3F3341C9C05A600B10007 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C5F3F3451C9C05A600B10007 /* Info.plist */,
 				C5F3F3351C9C05A600B10007 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -142,6 +171,10 @@
 			children = (
 				C5F3F34E1C9C05A600B10007 /* ShoppingListTests.m */,
 				C5F3F3501C9C05A600B10007 /* Info.plist */,
+				C5F3F3761C9C362C00B10007 /* SCShoppingListUnitTestCase.m */,
+				C5F3F3791C9C42DA00B10007 /* SCShoppingListTableViewControllerTestCase.m */,
+				C5F3F37E1C9C5C4700B10007 /* SCCheckoutTableViewControllerTestCase.m */,
+				C5F3F38A1C9C83E500B10007 /* SCCurrencyProviderServiceTestCase.m */,
 			);
 			path = ShoppingListTests;
 			sourceTree = "<group>";
@@ -153,6 +186,66 @@
 				C5F3F35B1C9C05A600B10007 /* Info.plist */,
 			);
 			path = ShoppingListUITests;
+			sourceTree = "<group>";
+		};
+		C5F3F3671C9C112900B10007 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C5F3F3681C9C11CF00B10007 /* SCShoppingListTableViewController.h */,
+				C5F3F3691C9C11CF00B10007 /* SCShoppingListTableViewController.m */,
+				C5F3F37B1C9C5C1500B10007 /* SCCheckoutTableViewController.h */,
+				C5F3F37C1C9C5C1500B10007 /* SCCheckoutTableViewController.m */,
+				C5F3F3831C9C7CDB00B10007 /* SCCurrencyTableViewController.h */,
+				C5F3F3841C9C7CDB00B10007 /* SCCurrencyTableViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		C5F3F36B1C9C231D00B10007 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				C5F3F36C1C9C235F00B10007 /* SCShoppingItem.h */,
+				C5F3F36D1C9C235F00B10007 /* SCShoppingItem.m */,
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		C5F3F36F1C9C30AF00B10007 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				C5F3F3701C9C30E300B10007 /* SCShoppingListCellTableViewCell.h */,
+				C5F3F3711C9C30E300B10007 /* SCShoppingListCellTableViewCell.m */,
+				C5F3F3801C9C5ED300B10007 /* SCCheckoutTableViewCell.h */,
+				C5F3F3811C9C5ED300B10007 /* SCCheckoutTableViewCell.m */,
+			);
+			name = TableViewCell;
+			sourceTree = "<group>";
+		};
+		C5F3F3731C9C339500B10007 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C5F3F3741C9C33AC00B10007 /* ShoppingList.json */,
+				C5F3F3401C9C05A600B10007 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		C5F3F3781C9C367700B10007 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				C5F3F33D1C9C05A600B10007 /* Main.storyboard */,
+				C5F3F3421C9C05A600B10007 /* LaunchScreen.storyboard */,
+			);
+			name = StoryBoards;
+			sourceTree = "<group>";
+		};
+		C5F3F3861C9C838900B10007 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C5F3F3871C9C83CC00B10007 /* SCCurrencyProviderService.h */,
+				C5F3F3881C9C83CC00B10007 /* SCCurrencyProviderService.m */,
+			);
+			name = Service;
 			sourceTree = "<group>";
 		};
 		CC178B2E3A71413D6C50F375 /* Pods */ = {
@@ -271,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5F3F3441C9C05A600B10007 /* LaunchScreen.storyboard in Resources */,
+				C5F3F3751C9C33AC00B10007 /* ShoppingList.json in Resources */,
 				C5F3F3411C9C05A600B10007 /* Assets.xcassets in Resources */,
 				C5F3F33F1C9C05A600B10007 /* Main.storyboard in Resources */,
 			);
@@ -345,9 +439,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C5F3F33C1C9C05A600B10007 /* ViewController.m in Sources */,
+				C5F3F3891C9C83CC00B10007 /* SCCurrencyProviderService.m in Sources */,
+				C5F3F3821C9C5ED300B10007 /* SCCheckoutTableViewCell.m in Sources */,
+				C5F3F36E1C9C235F00B10007 /* SCShoppingItem.m in Sources */,
+				C5F3F3851C9C7CDB00B10007 /* SCCurrencyTableViewController.m in Sources */,
+				C5F3F37D1C9C5C1500B10007 /* SCCheckoutTableViewController.m in Sources */,
+				C5F3F3721C9C30E300B10007 /* SCShoppingListCellTableViewCell.m in Sources */,
 				C5F3F3391C9C05A600B10007 /* AppDelegate.m in Sources */,
 				C5F3F3361C9C05A600B10007 /* main.m in Sources */,
+				C5F3F36A1C9C11CF00B10007 /* SCShoppingListTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +455,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5F3F38B1C9C83E500B10007 /* SCCurrencyProviderServiceTestCase.m in Sources */,
 				C5F3F34F1C9C05A600B10007 /* ShoppingListTests.m in Sources */,
+				C5F3F37F1C9C5C4700B10007 /* SCCheckoutTableViewControllerTestCase.m in Sources */,
+				C5F3F37A1C9C42DA00B10007 /* SCShoppingListTableViewControllerTestCase.m in Sources */,
+				C5F3F3771C9C362C00B10007 /* SCShoppingListUnitTestCase.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
