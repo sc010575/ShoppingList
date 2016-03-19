@@ -44,7 +44,7 @@
         self.item.amount = self.amountStepper.value;
         //To correctly show "1" or "21 can", but "2 cans".
         NSString *units = (self.item.amount % 10 == 1) && (self.item.amount != 11) ? self.item.units : [NSString stringWithFormat:@"%@s", self.item.units];
-        self.amountLabel.text = [NSString stringWithFormat:@"Items: %li %@", (long)self.item.amount, units];
+        self.amountLabel.text = [NSString stringWithFormat:@"%li %@", (long)self.item.amount, units];
         
         //Send notification to  update button state, disabling it in case on items are selected
         [[NSNotificationCenter defaultCenter] postNotificationName:SCAGoodsAmountChangedNotification object:self.item];

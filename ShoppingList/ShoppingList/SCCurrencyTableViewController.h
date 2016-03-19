@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol SCCurrencyTableViewControllerDelegate <NSObject>
+
+@required
+- (void) setNewCurrency:(NSString*)currency;
+
+@end
+
+
 @interface SCCurrencyTableViewController : UITableViewController
+
+@property (nonatomic, weak) id<SCCurrencyTableViewControllerDelegate> delegate;
 
 @end

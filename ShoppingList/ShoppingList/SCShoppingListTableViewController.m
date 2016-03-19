@@ -29,10 +29,10 @@
         [self.shoppingLists addObject:item];
     }
     
-    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Checkout ->" style:UIBarButtonItemStylePlain target:self action:@selector(checkoutAction:)];
+    UIBarButtonItem *barButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Checkout" style:UIBarButtonItemStylePlain target:self action:@selector(checkoutAction:)];
      self.navigationItem.rightBarButtonItem = barButtonItem;
     
-    self.title = @"Shoppinh lists";
+    self.title = @"Items";
     
     //We need this to accordingly update checkout button state, disabling it in case any items are added to basket
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shoppingListsHasChanged) name:SCAGoodsAmountChangedNotification object:nil];
@@ -57,6 +57,7 @@
 
 
 #pragma mark - checkOut Action
+
 - (void)checkoutAction:(id)sender
 {
     // Get reference to the destination view controller
