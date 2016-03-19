@@ -27,6 +27,7 @@
 		C5F3F3851C9C7CDB00B10007 /* SCCurrencyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3841C9C7CDB00B10007 /* SCCurrencyTableViewController.m */; };
 		C5F3F3891C9C83CC00B10007 /* SCCurrencyProviderService.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3881C9C83CC00B10007 /* SCCurrencyProviderService.m */; };
 		C5F3F38B1C9C83E500B10007 /* SCCurrencyProviderServiceTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F38A1C9C83E500B10007 /* SCCurrencyProviderServiceTestCase.m */; };
+		C5F3F3931C9E170C00B10007 /* SCCurrencyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3921C9E170C00B10007 /* SCCurrencyTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		C5F3F3871C9C83CC00B10007 /* SCCurrencyProviderService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCurrencyProviderService.h; sourceTree = "<group>"; };
 		C5F3F3881C9C83CC00B10007 /* SCCurrencyProviderService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCurrencyProviderService.m; sourceTree = "<group>"; };
 		C5F3F38A1C9C83E500B10007 /* SCCurrencyProviderServiceTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCurrencyProviderServiceTestCase.m; sourceTree = "<group>"; };
+		C5F3F3911C9E170C00B10007 /* SCCurrencyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCCurrencyTableViewCell.h; sourceTree = "<group>"; };
+		C5F3F3921C9E170C00B10007 /* SCCurrencyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCCurrencyTableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +216,8 @@
 		C5F3F36F1C9C30AF00B10007 /* TableViewCell */ = {
 			isa = PBXGroup;
 			children = (
+				C5F3F3911C9E170C00B10007 /* SCCurrencyTableViewCell.h */,
+				C5F3F3921C9E170C00B10007 /* SCCurrencyTableViewCell.m */,
 				C5F3F3701C9C30E300B10007 /* SCShoppingListCellTableViewCell.h */,
 				C5F3F3711C9C30E300B10007 /* SCShoppingListCellTableViewCell.m */,
 				C5F3F3801C9C5ED300B10007 /* SCCheckoutTableViewCell.h */,
@@ -443,6 +448,7 @@
 				C5F3F3821C9C5ED300B10007 /* SCCheckoutTableViewCell.m in Sources */,
 				C5F3F36E1C9C235F00B10007 /* SCShoppingItem.m in Sources */,
 				C5F3F3851C9C7CDB00B10007 /* SCCurrencyTableViewController.m in Sources */,
+				C5F3F3931C9E170C00B10007 /* SCCurrencyTableViewCell.m in Sources */,
 				C5F3F37D1C9C5C1500B10007 /* SCCheckoutTableViewController.m in Sources */,
 				C5F3F3721C9C30E300B10007 /* SCShoppingListCellTableViewCell.m in Sources */,
 				C5F3F3391C9C05A600B10007 /* AppDelegate.m in Sources */,
