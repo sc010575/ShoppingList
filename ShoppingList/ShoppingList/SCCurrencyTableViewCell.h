@@ -6,6 +6,8 @@
 //  Copyright © 2016 Suman Chatterjee. All rights reserved.
 //
 
+//  This is a table cell that holds information about each currencies and its description.
+
 #import <UIKit/UIKit.h>
 
 @interface SCCurrencyTableViewCell : UITableViewCell

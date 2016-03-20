@@ -34,6 +34,7 @@
         XCTAssert(storyboard, @"Failed to get the main storyboard");
         self.viewController = [storyboard instantiateViewControllerWithIdentifier:[self storyboardRestorationId]];
         [self.viewController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
+        [self.viewController performSelectorOnMainThread:@selector(viewDidLoad) withObject:nil waitUntilDone:YES];
     }
     
 }

@@ -6,6 +6,8 @@
 //  Copyright © 2016 Suman Chatterjee. All rights reserved.
 //
 
+//  This is a table cell that holds information about each item in the shoppinglists.
+
 #import <UIKit/UIKit.h>
 
 @class SCShoppingItem;

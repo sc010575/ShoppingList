@@ -9,7 +9,7 @@
         <!--Root View Controller-->
         <scene sceneID="l2d-5y-hJV">
             <objects>
-                <tableViewController storyboardIdentifier="SCShoppingListTableViewController" id="Vb9-kW-xuX" customClass="SCShoppingListTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SCShoppingListTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Vb9-kW-xuX" customClass="SCShoppingListTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="130" sectionHeaderHeight="28" sectionFooterHeight="28" id="rIv-kf-cQo">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -93,7 +93,7 @@
         <!--Checkout Table View Controller-->
         <scene sceneID="61W-jB-yI8">
             <objects>
-                <tableViewController storyboardIdentifier="SCCheckoutTableViewController" id="heE-fM-jod" customClass="SCCheckoutTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SCCheckoutTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="heE-fM-jod" customClass="SCCheckoutTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="efj-M9-l94">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -234,7 +234,7 @@
         <!--Currency Table View Controller-->
         <scene sceneID="sD9-5D-5wR">
             <objects>
-                <tableViewController storyboardIdentifier="SCCurrencyTableViewController" id="2Xh-Uj-nt3" customClass="SCCurrencyTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SCCurrencyTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="2Xh-Uj-nt3" customClass="SCCurrencyTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="84" sectionHeaderHeight="28" sectionFooterHeight="28" id="S5f-0w-OAu">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

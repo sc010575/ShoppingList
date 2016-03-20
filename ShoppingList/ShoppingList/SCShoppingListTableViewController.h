@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SCShoppingListProtocol.h"
 
-@interface SCShoppingListTableViewController : UITableViewController
+@interface SCShoppingListTableViewController : UITableViewController<SCShoppingListProtocol>
+
 
 @end

@@ -29,8 +29,10 @@
 
 @implementation SCCheckoutTableViewController
 
-- (void) setPurchasedItems:(NSMutableArray *)purchasedItems {
-    _purchasedItems = [purchasedItems mutableCopy];
+@synthesize purchasedItems;
+
+- (void) setPurchasedItems:(NSMutableArray *)thePurchasedItems {
+    purchasedItems = thePurchasedItems;
     [self.tableView reloadData];
     [self calculateTotalPrice];
     self.priceInLocalCurrency = 0;
@@ -52,12 +54,12 @@
 
 - (void)viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
     self.gotCurrencyData = false;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 //Updating the price label in case the value changed (for instance, if we converted it to other currency)
@@ -192,7 +194,6 @@
 
 - (void)alertForError:(NSError*) error
 {
-    
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.activityIndecator stopAnimating];
         

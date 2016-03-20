@@ -13,12 +13,11 @@
 
 @interface SCShoppingListTableViewController ()
 
-
-@property (nonatomic, strong) NSMutableArray *shoppingLists;
-
 @end
 
 @implementation SCShoppingListTableViewController
+
+@synthesize shoppingLists;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -46,7 +45,8 @@
 }
 
 - (void) shoppingListsHasChanged {
-    //We calculate the total amount (in case we may need to show it in the UI)
+    
+    //Calculate the total amount and show if the checkout button will enable or disable
     CGFloat totalPrice = 0;
     for (SCShoppingItem *item in self.shoppingLists) {
         totalPrice += item.price * item.amount;
@@ -64,7 +64,17 @@
     UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 
     SCCheckoutTableViewController * checkoutViewController  = [storyboard instantiateViewControllerWithIdentifier:@"SCCheckoutTableViewController"];
-    
+    [checkoutViewController setPurchasedItems:[[self preparePurchasedItems] mutableCopy]];
+
+    [self.navigationController pushViewController:checkoutViewController animated:YES];
+
+
+}
+
+#pragma mark - SCShoppingListProtocal
+
+- (NSArray*)preparePurchasedItems
+{
     NSArray *purchasedItems = @[];
     for (SCShoppingItem *item in self.shoppingLists) {
         
@@ -72,13 +82,9 @@
             purchasedItems = [purchasedItems arrayByAddingObject:item];
         }
     }
-    
-    [checkoutViewController setPurchasedItems:[purchasedItems mutableCopy]];
-
-    [self.navigationController pushViewController:checkoutViewController animated:YES];
-
-
+    return purchasedItems;
 }
+
 
 
 #pragma mark - Table view data source
@@ -94,7 +100,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
- 
+    
     SCShoppingListCellTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([SCShoppingListCellTableViewCell class]) forIndexPath:indexPath];
     
     SCShoppingItem *shoppingListItem = self.shoppingLists[indexPath.row];
@@ -105,40 +111,6 @@
 }
 
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 
 #pragma mark - Navigation

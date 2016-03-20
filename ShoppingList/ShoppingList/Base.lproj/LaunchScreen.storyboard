@@ -18,12 +18,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="opening" translatesAutoresizingMaskIntoConstraints="NO" id="aIT-kM-PNu">
-                                <rect key="frame" x="187.5" y="120" width="225" height="360"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="225" id="LrS-Ir-GIc"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your shopping list and add to the basket." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ly-UW-lXI">
                                 <rect key="frame" x="60" y="40" width="480" height="66"/>
                                 <constraints>
@@ -33,15 +27,21 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="opening" translatesAutoresizingMaskIntoConstraints="NO" id="muQ-2f-6pw">
+                                <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="UPv-WW-oQh"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="5ly-UW-lXI" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="20" id="2gl-Om-22y"/>
                             <constraint firstItem="5ly-UW-lXI" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leadingMargin" constant="40" id="C4X-fe-do4"/>
-                            <constraint firstItem="aIT-kM-PNu" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Zaw-yi-hfl"/>
-                            <constraint firstItem="aIT-kM-PNu" firstAttribute="top" secondItem="5ly-UW-lXI" secondAttribute="bottom" constant="14" id="kCu-F0-kNw"/>
+                            <constraint firstItem="muQ-2f-6pw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="t0o-GO-zgf"/>
+                            <constraint firstItem="muQ-2f-6pw" firstAttribute="top" secondItem="5ly-UW-lXI" secondAttribute="bottom" constant="44" id="v05-xf-JyE"/>
                             <constraint firstItem="5ly-UW-lXI" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="w91-c4-7me"/>
-                            <constraint firstItem="aIT-kM-PNu" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="zCn-wa-gED"/>
+                            <constraint firstItem="muQ-2f-6pw" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="z8A-cx-BYz"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -51,6 +51,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="opening" width="225" height="235"/>
+        <image name="opening" width="650" height="650"/>
     </resources>
 </document>

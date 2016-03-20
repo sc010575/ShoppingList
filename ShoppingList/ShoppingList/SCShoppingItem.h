@@ -6,6 +6,8 @@
 //  Copyright © 2016 Suman Chatterjee. All rights reserved.
 //
 
+//A class representing a single shopping item.
+
 #import <Foundation/Foundation.h>
 #import <CoreGraphics/CGBase.h>
 

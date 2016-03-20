@@ -85,7 +85,7 @@ NSString* const ScRequestedConvertedAmount = @"amount";
 /*
  
  When I run this method I got "Access Restricted - Your current Subscription Plan does not support this API Function."
- I am currently using a macro for the free keys, I the key is not restricted we need to comment the "SCAccountKeyIsFree".
+ I am currently using a macro for the free keys, In real case if the key is not restricted we need to comment the "SCAccountKeyIsFree".
  Currently I am sending a hardcoaded value for the ammount.
  
  */

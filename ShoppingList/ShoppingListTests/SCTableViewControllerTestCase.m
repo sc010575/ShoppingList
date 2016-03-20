@@ -14,13 +14,13 @@
     return (UITableViewController*)self.viewController;
 }
 
-- (Class)classUnderTest {
+- (Class)viewControllerClassUnderTest {
     //Should be overriden in child classes though
     return [SCTableViewControllerTestCase class];
 }
 
 - (BOOL) shouldSkipAssert {
-    return [self classUnderTest] == [SCTableViewControllerTestCase class];
+    return [self viewControllerClassUnderTest] == [SCTableViewControllerTestCase class];
 }
 
 #pragma mark - UITableView tests cases
@@ -43,12 +43,6 @@
 
 - (void)testTableViewIsConnectedToDelegate {
     XCTAssert(self.tableViewController.tableView.delegate || [self shouldSkipAssert], @"Table delegate cannot be nil");
-}
-
-- (void)testTableViewCellCreateCellsWithReuseIdentifier {
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    UITableViewCell *cell = [self.tableViewController tableView:self.tableViewController.tableView cellForRowAtIndexPath:indexPath];
-    XCTAssert(cell || [self shouldSkipAssert], @"Table data source failed to create a cell");
 }
 
 @end

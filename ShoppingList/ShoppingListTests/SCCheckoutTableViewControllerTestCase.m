@@ -12,15 +12,13 @@
 
 @interface SCCheckoutTableViewControllerTestCase : SCTableViewControllerTestCase
 
-@property (nonatomic, strong) SCCheckoutTableViewController *viewControllerUnderTest;
-
 @end
 
 @implementation SCCheckoutTableViewControllerTestCase
 
 - (Class)viewControllerClassUnderTest {
     
-    return [SCCheckoutTableViewControllerTestCase class];
+    return [SCCheckoutTableViewController class];
 }
 
 

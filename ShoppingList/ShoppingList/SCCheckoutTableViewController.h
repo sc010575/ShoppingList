@@ -7,9 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "SCCheckoutProtocol.h"
 
-@interface SCCheckoutTableViewController : UITableViewController
-
-@property (nonatomic, strong) NSMutableArray *purchasedItems;
+@interface SCCheckoutTableViewController : UITableViewController<SCCheckoutProtocol>
 
 @end
