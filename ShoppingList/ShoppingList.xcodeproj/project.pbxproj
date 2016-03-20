@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		4E1DCA3696B321A406D0D912 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 23AAA538CFAABD8D42C8110D /* libPods.a */; };
+		C5798EDE1C9EC99F000501A0 /* SCBaseViewControllerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = C5798EDD1C9EC99F000501A0 /* SCBaseViewControllerTestCase.m */; };
+		C5798EE11C9ECADB000501A0 /* SCTableViewControllerTestCase.m in Sources */ = {isa = PBXBuildFile; fileRef = C5798EE01C9ECADB000501A0 /* SCTableViewControllerTestCase.m */; };
 		C5F3F3361C9C05A600B10007 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3351C9C05A600B10007 /* main.m */; };
 		C5F3F3391C9C05A600B10007 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3381C9C05A600B10007 /* AppDelegate.m */; };
 		C5F3F33F1C9C05A600B10007 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F3F33D1C9C05A600B10007 /* Main.storyboard */; };
@@ -50,6 +52,10 @@
 		0837D38BF9F31416FB6008F0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		23AAA538CFAABD8D42C8110D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C6C79B30EF7F5DBDC979F09 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C5798EDC1C9EC99F000501A0 /* SCBaseViewControllerTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCBaseViewControllerTestCase.h; sourceTree = "<group>"; };
+		C5798EDD1C9EC99F000501A0 /* SCBaseViewControllerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCBaseViewControllerTestCase.m; sourceTree = "<group>"; };
+		C5798EDF1C9ECADB000501A0 /* SCTableViewControllerTestCase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCTableViewControllerTestCase.h; sourceTree = "<group>"; };
+		C5798EE01C9ECADB000501A0 /* SCTableViewControllerTestCase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCTableViewControllerTestCase.m; sourceTree = "<group>"; };
 		C5F3F3311C9C05A600B10007 /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F3F3351C9C05A600B10007 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		C5F3F3371C9C05A600B10007 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -171,9 +177,13 @@
 			isa = PBXGroup;
 			children = (
 				C5F3F3501C9C05A600B10007 /* Info.plist */,
-				C5F3F3761C9C362C00B10007 /* SCShoppingListUnitTestCase.m */,
+				C5798EDC1C9EC99F000501A0 /* SCBaseViewControllerTestCase.h */,
+				C5798EDD1C9EC99F000501A0 /* SCBaseViewControllerTestCase.m */,
+				C5798EDF1C9ECADB000501A0 /* SCTableViewControllerTestCase.h */,
+				C5798EE01C9ECADB000501A0 /* SCTableViewControllerTestCase.m */,
 				C5F3F3791C9C42DA00B10007 /* SCShoppingListTableViewControllerTestCase.m */,
 				C5F3F37E1C9C5C4700B10007 /* SCCheckoutTableViewControllerTestCase.m */,
+				C5F3F3761C9C362C00B10007 /* SCShoppingListUnitTestCase.m */,
 				C5F3F38A1C9C83E500B10007 /* SCCurrencyProviderServiceTestCase.m */,
 			);
 			path = ShoppingListTests;
@@ -461,6 +471,8 @@
 			files = (
 				C5F3F38B1C9C83E500B10007 /* SCCurrencyProviderServiceTestCase.m in Sources */,
 				C5F3F37F1C9C5C4700B10007 /* SCCheckoutTableViewControllerTestCase.m in Sources */,
+				C5798EDE1C9EC99F000501A0 /* SCBaseViewControllerTestCase.m in Sources */,
+				C5798EE11C9ECADB000501A0 /* SCTableViewControllerTestCase.m in Sources */,
 				C5F3F37A1C9C42DA00B10007 /* SCShoppingListTableViewControllerTestCase.m in Sources */,
 				C5F3F3771C9C362C00B10007 /* SCShoppingListUnitTestCase.m in Sources */,
 			);
