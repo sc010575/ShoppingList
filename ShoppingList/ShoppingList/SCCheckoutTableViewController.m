@@ -14,7 +14,10 @@
 
 @interface SCCheckoutTableViewController ()<SCCurrencyTableViewControllerDelegate>
 
-@property (nonatomic, weak) IBOutlet UILabel *totalValueLabel;
+@property (nonatomic, weak) IBOutlet UILabel  *totalValueLabel;
+@property (nonatomic, weak) IBOutlet UILabel  *headerInstructionLabel;
+@property (nonatomic, weak) IBOutlet UIButton *changeCurrencyButton;
+
 @property (nonatomic, strong) NSString *selectedCurrency;
 @property (nonatomic) CGFloat priceInLocalCurrency;
 @property (nonatomic) CGFloat newPriceWeGotInSelectedCurrency;
@@ -26,22 +29,23 @@
 
 @implementation SCCheckoutTableViewController
 
-- (void) setPurchasedItems:(NSArray *)purchasedItems {
-    _purchasedItems = purchasedItems;
-    //Initialise with default values and reset the rest.
+- (void) setPurchasedItems:(NSMutableArray *)purchasedItems {
+    _purchasedItems = [purchasedItems mutableCopy];
     [self.tableView reloadData];
+    [self calculateTotalPrice];
     self.priceInLocalCurrency = 0;
-    
-    for (SCShoppingItem *item in purchasedItems) {
-        self.priceInLocalCurrency += item.price * item.amount;
-    }
-    self.selectedCurrency = SCLocalCurrency;
 }
 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.title = @"Basket";
+    self.headerInstructionLabel.text = @"To remove items from the shopping lists, swipe the selected row. You can then remove it from shopping lists.";
+    
+    [[self.changeCurrencyButton layer] setBorderWidth:2.0f];
+    [[self.changeCurrencyButton layer] setBorderColor:[UIColor blackColor].CGColor];
+    
     self.selectedCurrency = SCLocalCurrency;
     [self updateTotalPriceLabel];
 }
@@ -60,9 +64,8 @@
 - (void) updateTotalPriceLabel {
     
     SCCheckoutTableViewController __weak *weakSelf = self;
-    //Again, make sure we update the label in the main thread
     dispatch_async(dispatch_get_main_queue(), ^{
-        NSNumber *price = [NSNumber numberWithDouble:weakSelf.priceInLocalCurrency];
+        NSNumber *price = [NSNumber numberWithDouble:weakSelf.newPriceWeGotInSelectedCurrency];
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
         formatter.currencyCode = weakSelf.selectedCurrency;
         [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
@@ -91,17 +94,32 @@
     return cell;
 }
 
-/*
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Return YES if you want the specified item to be editable.
+    return YES;
+}
+
  // Override to support editing the table view.
  - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
  if (editingStyle == UITableViewCellEditingStyleDelete) {
- // Delete the row from the data source
- [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
- } else if (editingStyle == UITableViewCellEditingStyleInsert) {
- // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+     // Delete the row from the data source
+     [self.purchasedItems removeObjectAtIndex:indexPath.row];
+     [self calculateTotalPrice];
+
+     [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+     [self updateTotalPriceLabel];
+
+    }
  }
- }
- */
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    //Set NSString for button display text here.
+    NSString *newTitle = @"Remove";
+    return newTitle;
+    
+}
+
 
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -129,6 +147,8 @@
  
 }
 
+#pragma mark - Button action
+
 - (IBAction)changeCurrencyAction:(id)sender {
     
     [self.activityIndecator startAnimating];
@@ -138,14 +158,17 @@
         [weakSelf.activityIndecator stopAnimating];
          weakSelf.gotCurrencyData = YES;
         [weakSelf performSegueWithIdentifier:@"ShowCurrency" sender:self];
+        
     } failure:^(NSError *error) {
-        NSLog(@"fail");
-        //Show alert
+
+        [self alertForError:error];
+        
     }];
 
     
 }
 
+#pragma mark - private function
 
 - (void) setNewCurrency:(NSString *)selectedCurrency {
     self.selectedCurrency = selectedCurrency;
@@ -155,29 +178,49 @@
         [self.activityIndecator startAnimating];
         SCCheckoutTableViewController __weak *weakSelf = self;
         [[SCCurrencyProviderService instance] convertAmountInLocalCurrency:weakSelf.priceInLocalCurrency toCurrency:self.selectedCurrency withCompletion:^(NSDictionary *json) {
+            [weakSelf.activityIndecator stopAnimating];
+            weakSelf.newPriceWeGotInSelectedCurrency = [json[ScRequestedConvertedAmount] floatValue];
+            [weakSelf updateTotalPriceLabel];
             //nslo
         } failure:^(NSError *error) {
-            //nsn
+            _selectedCurrency = SCLocalCurrency;
+             [weakSelf updateTotalPriceLabel];
+            [self alertForError:error];
         }];
     }
-//        ASCheckoutTableViewController __weak *weakSelf = self;
-//        //Make the request to convert the price
-//        [ASCurrenciesService convertAmountInLocalCurrency:weakSelf.priceInLocalCurrency toCurrency:_selectedCurrency withCompletion:^(NSDictionary *json) {
-//            weakSelf.priceInSelectedCurrency = [json[ASRequestArgumentAmount] floatValue];
-//            [weakSelf updatePriceLabel];
-//        } failure:^(NSError *error) {
-//            [weakSelf handleConnectionError:error];
-//            //Fall back to local currency
-//            _selectedCurrency = ASLocalCurrency;
-//            weakSelf.priceInSelectedCurrency = weakSelf.priceInLocalCurrency;
-//            [weakSelf updatePriceLabel];
-//        }];
-//    }
-//    else {
-//        //If the local currency is selected, we don't make any requests
-//        self.priceInSelectedCurrency = self.priceInLocalCurrency;
-//        [self updatePriceLabel];
-//    }
 }
+
+- (void)alertForError:(NSError*) error
+{
+    
+    dispatch_async(dispatch_get_main_queue(), ^{
+        [self.activityIndecator stopAnimating];
+        
+        UIAlertController *alert= [UIAlertController
+                                   alertControllerWithTitle:@"Error"
+                                   message:[error localizedDescription]
+                                   preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {}];
+        
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        
+    });
+    
+    
+}
+
+- (void)calculateTotalPrice
+{
+    self.priceInLocalCurrency = 0.0;
+    for (SCShoppingItem *item in self.purchasedItems) {
+        self.priceInLocalCurrency += item.price * item.amount;
+    }
+    self.newPriceWeGotInSelectedCurrency = self.priceInLocalCurrency;
+    self.selectedCurrency = SCLocalCurrency;
+    
+}
+
 
 @end

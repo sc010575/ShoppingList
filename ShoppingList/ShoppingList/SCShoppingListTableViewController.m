@@ -73,7 +73,7 @@
         }
     }
     
-    [checkoutViewController setPurchasedItems:purchasedItems];
+    [checkoutViewController setPurchasedItems:[purchasedItems mutableCopy]];
 
     [self.navigationController pushViewController:checkoutViewController animated:YES];
 
@@ -160,7 +160,7 @@
             }
         }
 
-        [checkoutViewController setPurchasedItems:purchasedItems];
+        [checkoutViewController setPurchasedItems:[purchasedItems mutableCopy]];
     }}
 
 

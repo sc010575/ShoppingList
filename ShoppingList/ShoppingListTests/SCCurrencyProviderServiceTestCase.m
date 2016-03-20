@@ -7,8 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "SCCurrencyProviderService.h"
 
 @interface SCCurrencyProviderServiceTestCase : XCTestCase
+
+@property (nonatomic, strong) NSDictionary *loadedCurrenciesDictionary;
 
 @end
 
@@ -24,16 +27,58 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // This is an example of a functional test case.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
-}
+- (void)testLoadCurrencies {
+    XCTestExpectation *currenciesExpectiation = [self expectationWithDescription:@"Currencies load"];
+    
+    [[SCCurrencyProviderService instance] getCurrenciesDetailsWithCompletion:^(NSDictionary *json) {
+        XCTAssert(json);
+        [currenciesExpectiation fulfill];
+        self.loadedCurrenciesDictionary = json;
+        NSArray * currenciesKey =  [self.loadedCurrenciesDictionary allKeys];
 
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
+        
+        NSDictionary * getCachedCurrenciesDict = [[SCCurrencyProviderService instance] getCachedCurrency];
+
+        NSArray * cachedArray = [getCachedCurrenciesDict allKeys];
+        XCTAssertTrue(currenciesKey.count == cachedArray.count, @" Cached Array data should match \"%s\"" ,__PRETTY_FUNCTION__);
+
+    } failure:^(NSError *error) {
+        XCTFail(@"Couldn't load the list of currencies");
+        [currenciesExpectiation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:20 handler:^(NSError *error) {
+        XCTAssert(YES, @"Finished currencies request test");
     }];
 }
+
+- (void)testGetCurrenciesPerformance {
+    [self measureBlock:^{
+        [self testLoadCurrencies];
+    }];
+}
+
+- (void)testCurrencieConversion {
+    XCTestExpectation *currenciesExpectiation = [self expectationWithDescription:@"Currencies conversion"];
+    
+    [[SCCurrencyProviderService instance] convertAmountInLocalCurrency:80.50 toCurrency:@"USD" withCompletion:^(NSDictionary *json) {
+        XCTAssert(json);
+        [currenciesExpectiation fulfill];
+    } failure:^(NSError *error) {
+        XCTFail(@"Couldn't convert the amount");
+        [currenciesExpectiation fulfill];
+    }];
+    
+    [self waitForExpectationsWithTimeout:20 handler:^(NSError *error) {
+        XCTAssert(YES, @"Finished currencies request test");
+    }];
+}
+
+- (void)testCurrencieConversionPerformance {
+    [self measureBlock:^{
+        [self testLoadCurrencies];
+    }];
+}
+
 
 @end

@@ -1,17 +1,39 @@
  [
   {
-  "id": 0,
   "name": "Peas",
   "image": "peas",
   "price": "0.95f",
   "units": "bag"
   },
   {
-  "id": 1,
   "name": "Eggs",
   "image": "eggs",
   "price": "2.10f",
   "units": "dozen"
+  },
+  {
+  "name": "Beans",
+  "image": "beens",
+  "price": "0.73f",
+  "units": "can"
+  },
+  {
+  "name": "Milk",
+  "image": "milk",
+  "price": "1.30f",
+  "units": "bottle"
+  },
+  {
+  "name": "Orange",
+  "image": "orange",
+  "price": "2.30f",
+  "units": "dozen"
+  },
+  {
+  "name": "Banana",
+  "image": "banana",
+  "price": "1.55f",
+  "units": "bag"
   }
 ]
 

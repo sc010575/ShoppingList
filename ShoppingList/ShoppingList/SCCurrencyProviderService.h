@@ -10,6 +10,7 @@
 #import <CoreGraphics/CGBase.h>
 
 extern NSString* const SCLocalCurrency;
+extern NSString* const  ScRequestedConvertedAmount;
 
 typedef void (^SuccessBlock)(NSDictionary* json);
 typedef void (^FailureBlock)(NSError* error);

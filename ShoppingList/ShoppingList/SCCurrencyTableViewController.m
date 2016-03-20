@@ -15,7 +15,7 @@
 
 @property (nonatomic, strong) NSArray * currencies;
 @property (nonatomic, strong) NSDictionary *countryWiseCurrencies;
-
+@property (nonatomic, strong) NSArray * selectionIndexTitleList;
 @end
 
 @implementation SCCurrencyTableViewController
@@ -25,19 +25,14 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.title = @"Currency list";
+    self.title = @"Currency lists";
     self.countryWiseCurrencies = [[SCCurrencyProviderService instance]getCachedCurrency];
     self.currencies = [[self.countryWiseCurrencies allKeys] sortedArrayUsingComparator:^NSComparisonResult(NSString *key1, NSString *key2) {
         return [key1 compare:key2];
     }];
-
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
 
 #pragma mark - Table view data source
 
@@ -68,6 +63,8 @@
     }
    [self.navigationController popViewControllerAnimated:YES];
 }
+
+#pragma mark - Search bar
 
 
 @end

@@ -9,12 +9,14 @@
 #import "SCCurrencyProviderService.h"
 #import "AFNetworking.h"
 
+#define SCAccountKeyIsFree
 
 NSString* const SCLocalCurrency = @"GBP";
 NSString* const SCListOfCurrencyDetailsUrl = @"http://apilayer.net/api/list?access_key=a219d06123a388bd0cdc3373e1e40cdb";
 
 NSString* const SCCurrencyBaseUrlForConversion = @"http://apilayer.net/api/convert?access_key=";
 NSString* const SCAccountKey = @"a219d06123a388bd0cdc3373e1e40cdb";
+NSString* const ScRequestedConvertedAmount = @"amount";
 
 
 @interface SCCurrencyProviderService()
@@ -38,8 +40,9 @@ NSString* const SCAccountKey = @"a219d06123a388bd0cdc3373e1e40cdb";
     return sharedInstance;
 }
 
-// Here we request for the currency details , because the list will be same every time therefore I cached it after a successful fetch.
-
+/*
+ Here we request for the currency details , because the list will be same every time, therefore I cached it after a successful fetch.
+*/
 - (void) getCurrenciesDetailsWithCompletion:(SuccessBlock)success
                                     failure:(FailureBlock)failure
 {
@@ -54,7 +57,7 @@ NSString* const SCAccountKey = @"a219d06123a388bd0cdc3373e1e40cdb";
         manager.requestSerializer = [AFJSONRequestSerializer serializer];
         
         [manager GET:SCListOfCurrencyDetailsUrl parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-            NSLog(@"JSON: %@", responseObject);
+            //NSLog(@"JSON: %@", responseObject);
             NSString *statusCheck = responseObject[@"success"];
             if([statusCheck boolValue])
             {
@@ -79,6 +82,14 @@ NSString* const SCAccountKey = @"a219d06123a388bd0cdc3373e1e40cdb";
     return self.cachedCurrencyDictonary;
 }
 
+/*
+ 
+ When I run this method I got "Access Restricted - Your current Subscription Plan does not support this API Function."
+ I am currently using a macro for the free keys, I the key is not restricted we need to comment the "SCAccountKeyIsFree".
+ Currently I am sending a hardcoaded value for the ammount.
+ 
+ */
+
 - (void) convertAmountInLocalCurrency:(CGFloat)amount
                            toCurrency:(NSString*)currency
                        withCompletion:(SuccessBlock)success
@@ -90,14 +101,26 @@ NSString* const SCAccountKey = @"a219d06123a388bd0cdc3373e1e40cdb";
     manager.requestSerializer = [AFJSONRequestSerializer serializer];
     
     [manager GET:encoded parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
+        //NSLog(@"JSON: %@", responseObject);
+        
+#ifdef SCAccountKeyIsFree
+        
+        NSDictionary *returnDictunary = @{ScRequestedConvertedAmount : @"60"};
+        success(returnDictunary);
+#else
         NSString *statusCheck = responseObject[@"success"];
         if([statusCheck boolValue])
         {
-            NSDictionary *currencyDict = responseObject[@"currencies"];
-            self.cachedCurrencyDictonary = currencyDict;
-            success(currencyDict);
+                    NSDictionary *currencyDict = responseObject[ScRequestedConvertedAmount];
+                   success(currencyDict);
+        }else{
+            
+            NSError *error = [NSError errorWithDomain:@"Access Restricted" code:105 userInfo:nil];
+            failure(error);
+            
         }
+
+#endif
         
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         

@@ -20,6 +20,9 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="opening" translatesAutoresizingMaskIntoConstraints="NO" id="aIT-kM-PNu">
                                 <rect key="frame" x="187.5" y="120" width="225" height="360"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="225" id="LrS-Ir-GIc"/>
+                                </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your shopping list and add to the basket." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5ly-UW-lXI">
                                 <rect key="frame" x="60" y="40" width="480" height="66"/>

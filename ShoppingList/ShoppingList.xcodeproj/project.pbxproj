@@ -13,7 +13,6 @@
 		C5F3F33F1C9C05A600B10007 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F3F33D1C9C05A600B10007 /* Main.storyboard */; };
 		C5F3F3411C9C05A600B10007 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5F3F3401C9C05A600B10007 /* Assets.xcassets */; };
 		C5F3F3441C9C05A600B10007 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F3F3421C9C05A600B10007 /* LaunchScreen.storyboard */; };
-		C5F3F34F1C9C05A600B10007 /* ShoppingListTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F34E1C9C05A600B10007 /* ShoppingListTests.m */; };
 		C5F3F35A1C9C05A600B10007 /* ShoppingListUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3591C9C05A600B10007 /* ShoppingListUITests.m */; };
 		C5F3F36A1C9C11CF00B10007 /* SCShoppingListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F3691C9C11CF00B10007 /* SCShoppingListTableViewController.m */; };
 		C5F3F36E1C9C235F00B10007 /* SCShoppingItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F3F36D1C9C235F00B10007 /* SCShoppingItem.m */; };
@@ -60,7 +59,6 @@
 		C5F3F3431C9C05A600B10007 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C5F3F3451C9C05A600B10007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5F3F34A1C9C05A600B10007 /* ShoppingListTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingListTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C5F3F34E1C9C05A600B10007 /* ShoppingListTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoppingListTests.m; sourceTree = "<group>"; };
 		C5F3F3501C9C05A600B10007 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C5F3F3551C9C05A600B10007 /* ShoppingListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShoppingListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F3F3591C9C05A600B10007 /* ShoppingListUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ShoppingListUITests.m; sourceTree = "<group>"; };
@@ -172,7 +170,6 @@
 		C5F3F34D1C9C05A600B10007 /* ShoppingListTests */ = {
 			isa = PBXGroup;
 			children = (
-				C5F3F34E1C9C05A600B10007 /* ShoppingListTests.m */,
 				C5F3F3501C9C05A600B10007 /* Info.plist */,
 				C5F3F3761C9C362C00B10007 /* SCShoppingListUnitTestCase.m */,
 				C5F3F3791C9C42DA00B10007 /* SCShoppingListTableViewControllerTestCase.m */,
@@ -332,6 +329,7 @@
 				TargetAttributes = {
 					C5F3F3301C9C05A600B10007 = {
 						CreatedOnToolsVersion = 7.2.1;
+						DevelopmentTeam = 8VT29F6R7U;
 					};
 					C5F3F3491C9C05A600B10007 = {
 						CreatedOnToolsVersion = 7.2.1;
@@ -462,7 +460,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C5F3F38B1C9C83E500B10007 /* SCCurrencyProviderServiceTestCase.m in Sources */,
-				C5F3F34F1C9C05A600B10007 /* ShoppingListTests.m in Sources */,
 				C5F3F37F1C9C5C4700B10007 /* SCCheckoutTableViewControllerTestCase.m in Sources */,
 				C5F3F37A1C9C42DA00B10007 /* SCShoppingListTableViewControllerTestCase.m in Sources */,
 				C5F3F3771C9C362C00B10007 /* SCShoppingListUnitTestCase.m in Sources */,
@@ -597,6 +594,7 @@
 			baseConfigurationReference = 0837D38BF9F31416FB6008F0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ShoppingList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dreamapps.ShoppingList;
@@ -609,6 +607,7 @@
 			baseConfigurationReference = 2C6C79B30EF7F5DBDC979F09 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = ShoppingList/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = dreamapps.ShoppingList;

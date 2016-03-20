@@ -10,6 +10,6 @@
 
 @interface SCCheckoutTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *purchasedItems;
+@property (nonatomic, strong) NSMutableArray *purchasedItems;
 
 @end
