@@ -47,7 +47,7 @@
         self.amountLabel.text = [NSString stringWithFormat:@"%li %@", (long)self.item.amount, units];
         
         //Send notification to  update button state, disabling it in case on items are selected
-        [[NSNotificationCenter defaultCenter] postNotificationName:SCAGoodsAmountChangedNotification object:self.item];
+        [[NSNotificationCenter defaultCenter] postNotificationName:SCAShoppingListAmountChangedNotification object:self.item];
     }
 }
 

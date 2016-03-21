@@ -6,10 +6,18 @@
 //  Copyright © 2016 Suman Chatterjee. All rights reserved.
 //
 
+//Protocol for SCCheckoutTableViewController.
+
+
 #import <Foundation/Foundation.h>
 
 @protocol SCCheckoutProtocol <NSObject>
 
 @property (nonatomic, strong) NSMutableArray *purchasedItems;
+@property (nonatomic, strong) NSString *selectedCurrency;
+@property (nonatomic) CGFloat priceInLocalCurrency;
+@property (nonatomic) CGFloat newPriceWeGotInSelectedCurrency;
+
+- (void) setNewCurrency:(NSString *)selectedCurrency;
 
 @end

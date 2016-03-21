@@ -34,7 +34,7 @@
     self.title = @"Items";
     
     //We need this to accordingly update checkout button state, disabling it in case any items are added to basket
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shoppingListsHasChanged) name:SCAGoodsAmountChangedNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(shoppingListsHasChanged) name:SCAShoppingListAmountChangedNotification object:nil];
     
     [self shoppingListsHasChanged];
     

@@ -12,7 +12,7 @@ NSString* const SCShoppingListNameKey = @"name";
 NSString* const SCShoppingListImageKey = @"image";
 NSString* const SCShoppingListPriceKey = @"price";
 NSString* const SCShoppingListUnitsKey = @"units";
-NSString* const SCAGoodsAmountChangedNotification = @"kGoodsAmountChangedNotification";
+NSString* const SCAShoppingListAmountChangedNotification = @"kShoppingListChangedNotification";
 
 static NSString* KShoppingListFileName = @"ShoppingList.json";
 

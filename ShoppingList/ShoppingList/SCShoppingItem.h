@@ -16,7 +16,7 @@ extern NSString* const SCShoppingListImageKey;
 extern NSString* const SCShoppingListNameKey;
 extern NSString* const SCShoppingListPriceKey;
 extern NSString* const SCShoppingListUnitsKey;
-extern NSString* const SCAGoodsAmountChangedNotification;
+extern NSString* const SCAShoppingListAmountChangedNotification;
 
 
 @interface SCShoppingItem : NSObject

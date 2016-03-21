@@ -18,9 +18,6 @@
 @property (nonatomic, weak) IBOutlet UILabel  *headerInstructionLabel;
 @property (nonatomic, weak) IBOutlet UIButton *changeCurrencyButton;
 
-@property (nonatomic, strong) NSString *selectedCurrency;
-@property (nonatomic) CGFloat priceInLocalCurrency;
-@property (nonatomic) CGFloat newPriceWeGotInSelectedCurrency;
 @property (nonatomic) BOOL    gotCurrencyData;
 
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndecator;
@@ -30,6 +27,9 @@
 @implementation SCCheckoutTableViewController
 
 @synthesize purchasedItems;
+@synthesize selectedCurrency;
+@synthesize priceInLocalCurrency;
+@synthesize newPriceWeGotInSelectedCurrency;
 
 - (void) setPurchasedItems:(NSMutableArray *)thePurchasedItems {
     purchasedItems = thePurchasedItems;
@@ -172,8 +172,8 @@
 
 #pragma mark - private function
 
-- (void) setNewCurrency:(NSString *)selectedCurrency {
-    self.selectedCurrency = selectedCurrency;
+- (void) setNewCurrency:(NSString *)theSelectedCurrency {
+    self.selectedCurrency = theSelectedCurrency;
     [self.activityIndecator startAnimating];
     if (![self.selectedCurrency isEqualToString:SCLocalCurrency]) {
         
@@ -185,7 +185,7 @@
             [weakSelf updateTotalPriceLabel];
             //nslo
         } failure:^(NSError *error) {
-            _selectedCurrency = SCLocalCurrency;
+            selectedCurrency = SCLocalCurrency;
              [weakSelf updateTotalPriceLabel];
             [self alertForError:error];
         }];

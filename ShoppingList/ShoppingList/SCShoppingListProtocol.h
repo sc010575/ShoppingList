@@ -6,6 +6,8 @@
 //  Copyright © 2016 Suman Chatterjee. All rights reserved.
 //
 
+//Protocol for SCShoppingListTableViewController.
+
 #import <Foundation/Foundation.h>
 
 @protocol SCShoppingListProtocol <NSObject>
